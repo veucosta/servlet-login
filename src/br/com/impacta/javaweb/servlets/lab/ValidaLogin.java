@@ -26,9 +26,9 @@ public class ValidaLogin extends HttpServlet {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
-		//Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
+		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
 		
-		Usuario usuario = (Usuario) request.getAttribute("usuario");
+		//Usuario usuario = (Usuario) request.getAttribute("usuario");
 		
 		if(usuario == null) {
 			
@@ -36,9 +36,9 @@ public class ValidaLogin extends HttpServlet {
 			usuario.setLogin(login);
 			usuario.setSenha(senha);
 			
-			// request.getSession().setAttribute("usuario", usuario);
+			request.getSession().setAttribute("usuario", usuario);
 			
-			request.setAttribute("usuario", usuario);
+			//request.setAttribute("usuario", usuario);
 		}
 		
 			
